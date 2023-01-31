@@ -41,7 +41,7 @@ function runGmame(gameType) {
         displayAdditionalQuestion(num1, num2);
 
     } else if (gameType === "multiply") {
-        displaymultiplyQuestion(num1, num2);
+        displayMultiplyQuestion(num1, num2);
     } else if (gameType === "subtract") {
         displaySubtratQuestion(num1, num2);
     } else if (gameType === "division") {
@@ -58,7 +58,7 @@ function runGmame(gameType) {
  */
 function checkAnswer() {
     let userAnswer = parseInt(document.getElementById("answer-box").value);
-    let calculatedAnswer = calculatedAnswer();
+    let calculatedAnswer = calculateCorrectAnswer();
     let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect) {
@@ -76,7 +76,7 @@ function checkAnswer() {
  * Gets the operands (the number) and the operator (plus, minus etc)
  * directly from the som, and returns the correct answer.
  */
- function canculateCorrectAnswer() {
+ function calculateCorrectAnswer() {
     let operand1 = parseInt(document.getElementById('operand1').innerText);
     let operand2 = parseInt(document.getElementById('operand2').innerText);
     let operator = document.getElementById('operator').innerText;
